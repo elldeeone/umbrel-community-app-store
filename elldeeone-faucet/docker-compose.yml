@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+
+  faucet:
+    container_name: faucet
+    image: elldee/kaspa-mobile-faucet:latest
+    restart: unless-stopped
+    user: "0"
+    command:
+    ports:
+      - 3000:3000

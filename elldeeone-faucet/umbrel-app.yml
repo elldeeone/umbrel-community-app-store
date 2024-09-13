@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: elldeeone-faucet
+name: Kaspa Faucet
+tagline: Kaspa Faucet
+icon: https://svgshare.com/i/18Sc.svg
+category: Development
+version: "1.0.0"
+port: 3000
+description: >-
+  This is a Kaspa Faucet.
+
+developer: Kaspa
+website: https://test.com
+submitter: Test
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/getumbrel/umbrel-hello-world-app
+support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+gallery:
+  - https://user-images.githubusercontent.com/59971111/191983487-479e19ec-a8cb-4edb-afc4-55a1165e79fc.png
+releaseNotes: >-
+  Add what's new in the latest version of your app here.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
