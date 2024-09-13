@@ -9,4 +9,4 @@ services:
     user: "0"
     command:
     ports:
-      - 3000:3000
+      - 3000:4000
