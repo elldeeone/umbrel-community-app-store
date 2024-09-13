@@ -4,7 +4,7 @@ services:
 
   node:
     container_name: node
-    image: supertypo/kaspad:latest
+    image: supertypo/rusty-kaspad:latest
     restart: unless-stopped
     ports:
       - "16110:16110/tcp"
