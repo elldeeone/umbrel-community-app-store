@@ -59,7 +59,7 @@ description: >-
 developer: rdugan
 website: https://github.com/rdugan/kaspa-stratum-bridge
 repo: https://github.com/rdugan/kaspa-stratum-bridge
-support: https://github.com/elldeeone/
+support: https://github.com/elldeeone/umbrel-community-app-store/pulls
 port: 4322
 dependencies:
   - elldeeone-kas-rusty-kaspad
