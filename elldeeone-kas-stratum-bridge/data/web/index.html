@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaspa Stratum Bridge</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2d2d2d;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #2d2d2d;
+            margin-top: 0;
+        }
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .connection-details {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .miner-list {
+            columns: 2;
+            margin: 15px 0;
+        }
+        .miner-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .attribution {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+        .attribution a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .attribution a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kaspa Stratum Bridge</h1>
+        
+        <div class="info-box">
+            <h2>Connection Details</h2>
+            <p>Your Stratum Bridge is running and ready to accept connections from miners.</p>
+            <div class="connection-details">
+                <p><strong>Stratum URL:</strong> stratum+tcp://umbrel.local:5555</p>
+                <p><strong>Username:</strong> Your Kaspa wallet address</p>
+                <p><strong>Password:</strong> x (or any text)</p>
+                <p><strong>Prometheus Port:</strong> 2114</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2>Compatible Miners</h2>
+            <p>This bridge has been tested and confirmed working with the following miners:</p>
+            <div class="miner-list">
+                <ul>
+                    <li>bzminer</li>
+                    <li>lolminer</li>
+                    <li>srbminer</li>
+                    <li>teamreadminer</li>
+                    <li>IceRiver ASICs</li>
+                    <li>Bitmain ASICs</li>
+                </ul>
+            </div>
+            <p>Both kaspa-only and dual-mining modes are supported for miners that have this capability.</p>
+        </div>
+
+        <div class="attribution">
+            <p>This containerised version of Kaspa Stratum Bridge was built by <a href="http://luke.dunshea.au" target="_blank">Luke Dunshea</a> based on the <a href="https://github.com/rdugan/kaspa-stratum-bridge" target="_blank">Kaspa Stratum Bridge</a>.</p>
+        </div>
+    </div>
+</body>
+</html> 

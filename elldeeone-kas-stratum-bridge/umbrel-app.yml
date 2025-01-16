@@ -1,0 +1,54 @@
+manifestVersion: 1
+id: elldeeone-kas-stratum-bridge
+icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/891b41c3423f365c2e8093cdad5daedb9a0712d4/elldeeone-kas-rusty-kaspad/kaspa_icon.svg
+category: bitcoin
+name: Kaspa Stratum Bridge
+version: "v1.2.2"
+tagline: Connect Stratum miners to your Kaspa node
+description: >-
+  A comprehensive mining solution that bridges Stratum-based miners to your Kaspa node.
+
+
+  Key Components:
+
+
+  - Kaspa Stratum Bridge v1.2.2 - Maintained by rdugan (https://github.com/rdugan/kaspa-stratum-bridge)
+
+
+  Mining Connection Setup:
+
+  - Stratum URL: STRATUM+TCP://YOURUMBRELIPADDRESS:5555
+
+
+  - Username Format: YOURKASPAWALLETADDRESS.MINERNAME
+
+
+  - Password: x
+
+
+
+
+  Supported Mining Software:
+
+
+  - GPU Miners: bzminer, lolminer, srbminer, teamreadminer
+
+
+  - ASIC Hardware: IceRiver and Bitmain ASICs
+
+
+  Container image by Luke Dunshea (http://luke.dunshea.au)
+
+
+  Available on Docker Hub: https://hub.docker.com/r/elldee/kaspa-stratum-bridge
+
+developer: rdugan
+website: https://github.com/rdugan/kaspa-stratum-bridge
+repo: https://github.com/rdugan/kaspa-stratum-bridge
+support: https://github.com/elldeeone/umbrel-apps/pulls
+port: 4322
+dependencies:
+  - elldeeone-kas-rusty-kaspad
+gallery: []
+path: ""
+submitter: Luke Dunshea

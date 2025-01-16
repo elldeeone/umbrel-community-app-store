@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ks_grafana
+      APP_PORT: 3000
+      PROXY_PORT: 4322
+
+  bridge:
+    image: elldee/kaspa-stratum-bridge:1.2.2@sha256:70cd73d3785b1a933084c7399b5451db885d0bc8946c7819038a674e54a0a0b2
+    container_name: ks_bridge
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    ports:
+      - 5555:5555  # Stratum Port
+      - 2114:2114  # Prometheus Port
+
+  grafana:
+    image: grafana/grafana-oss:11.4.0@sha256:d8ea37798ccc41061a62ab080f2676dda6bf7815558499f901bdb0f533a456fb
+    container_name: ks_grafana
+    restart: on-failure
+    user: 1000:1000
+    volumes:
+      - ${APP_DATA_DIR}/data/grafana:/var/lib/grafana
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  prometheus:
+    image: prom/prometheus:v3.1.0@sha256:6559acbd5d770b15bb3c954629ce190ac3cbbdb2b7f1c30f0385c4e05104e218
+    container_name: ks_prom
+    restart: on-failure
+    volumes:
+      - prometheus_data:/prometheus
+      - ${APP_DATA_DIR}/data/prometheus/prometheus-internal.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - 9090:9090
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+volumes:
+  prometheus_data: {}

@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: elldeeone-kas-stratum-bridge_web_1
+      APP_PORT: 4322
+
+  web:
+    image: nginx:stable-alpine@sha256:b9e1705b69f778dca93cbbbe97d2c2562fb26cac1079cdea4e40d1dad98f14fe
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/config/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ${APP_DATA_DIR}/data/web:/usr/share/nginx/html:ro
+
+  bridge:
+    image: elldee/kaspa-stratum-bridge:1.2.2@sha256:70cd73d3785b1a933084c7399b5451db885d0bc8946c7819038a674e54a0a0b2
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    ports:
+      - 5555:5555  # Stratum Port
+      - 2114:2114  # Prometheus Port
