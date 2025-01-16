@@ -1,6 +1,6 @@
 manifestVersion: 1
 id: elldeeone-kas-stratum-bridge-all
-icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/891b41c3423f365c2e8093cdad5daedb9a0712d4/elldeeone-kas-rusty-kaspad/kaspa_icon.svg
+icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/refs/heads/master/icon/kaspa_icon.svg
 category: bitcoin
 name: Kaspa Stratum Bridge with GUI
 version: "v1.2.2"

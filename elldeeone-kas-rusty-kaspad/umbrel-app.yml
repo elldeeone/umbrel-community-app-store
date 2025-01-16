@@ -1,6 +1,6 @@
 manifestVersion: 1
 id: elldeeone-kas-rusty-kaspad
-icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/891b41c3423f365c2e8093cdad5daedb9a0712d4/elldeeone-kas-rusty-kaspad/kaspa_icon.svg
+icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/refs/heads/master/icon/kaspa_icon.svg
 category: bitcoin
 name: Rusty Kaspad
 version: "v0.15.2"
