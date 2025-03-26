@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: elldeeone-kas-rusty-kaspad-TN10_web_1
+      APP_HOST: elldeeone-kas-rusty-kaspad-tn10_web_1
       APP_PORT: 4322
 
   web:
