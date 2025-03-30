@@ -3,7 +3,7 @@ id: elldeeone-kas-rusty-kaspad
 icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/refs/heads/master/icon/kaspa_icon.svg
 category: bitcoin
 name: Rusty Kaspad
-version: "v0.15.2"
+version: "v0.16.1"
 tagline: A Rust implementation of a Kaspa full node
 description: >-
   Rusty Kaspad is a Rust implementation of a Kaspa full node. This node software 
@@ -24,7 +24,18 @@ description: >-
 
 
   Packaged for Umbrel by Luke Dunshea (http://luke.dunshea.au).
+releaseNotes: >-
+  Stable Release - v0.16.1
 
+  What's Changed:
+  - Implement UTXO Return Address RPC command by @coderofstuff (#436)
+  - Fix clippy, bump wasm dependencies by @biryukovmaxim (#624)
+  - Instant time instead of SystemTime by @miningexperiments (#625)
+  - Calculate sig ops on fly by @biryukovmaxim (#597)
+  - Proper tracking of the accumulative circulating supply store value by @michaelsutton (#629)
+
+  New Contributors:
+  - @miningexperiments made their first contribution (#625)
 developer: Kaspa Community
 website: https://github.com/kaspanet/rusty-kaspa
 repo: https://github.com/kaspanet/rusty-kaspa
