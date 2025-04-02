@@ -21,14 +21,13 @@ description: |
 
   Packaged for Umbrel by Luke Dunshea (http://luke.dunshea.au).
 releaseNotes: |
-
   ENSURE RUSTY KASPAD IS STOPPED PRIOR TO UPDATING.
 
   ONCE UPDATED, RUSTY KASPAD WILL AUTOMATICALLY START.
 
-This release introduces the Crescendo Hardfork, transitioning the Kaspa network from 1 BPS to 10 BPS. This marks a significant increase in transaction throughput and network capacity, as well as improved network responsiveness due to shorter block intervals, enhancing the overall user experience. Crescendo is scheduled to activate on mainnet at DAA Score 110,165,000, projected to occur on May 5, 2025, at approximately 15:00 UTC.
+  This release introduces the Crescendo Hardfork, transitioning the Kaspa network from 1 BPS to 10 BPS. This marks a significant increase in transaction throughput and network capacity, as well as improved network responsiveness due to shorter block intervals, enhancing the overall user experience. Crescendo is scheduled to activate on mainnet at DAA Score 110,165,000, projected to occur on May 5, 2025, at approximately 15:00 UTC.
 
-Starting 24 hours before activation, nodes will connect only to peers using the new P2P protocol version 7. Ensure your node is updated to maintain network connectivity.
+  Starting 24 hours before activation, nodes will connect only to peers using the new P2P protocol version 7. Ensure your node is updated to maintain network connectivity.
 developer: Kaspa Community
 website: https://github.com/kaspanet/rusty-kaspa
 repo: https://github.com/kaspanet/rusty-kaspa
