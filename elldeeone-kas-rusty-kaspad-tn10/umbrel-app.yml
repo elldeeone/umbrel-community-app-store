@@ -3,7 +3,7 @@ id: elldeeone-kas-rusty-kaspad-tn10
 icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/refs/heads/master/icon/kaspa_icon.svg
 category: bitcoin
 name: Rusty Kaspad TN10
-version: "v0.17.1"
+version: "v1.0.0"
 tagline: A Rust implementation of a Kaspa full node
 description: >-
   Rusty Kaspad is a Rust implementation of a Kaspa full node. This node software 
@@ -25,7 +25,8 @@ description: >-
 
   Packaged for Umbrel by Luke Dunshea (http://luke.dunshea.au).
 releaseNotes: >-
-  Updated to v0.17.1
+  Updated to v1.0.0
+  Updated to use Kaspanet repository
 developer: Kaspa Community
 website: https://github.com/kaspanet/rusty-kaspa
 repo: https://github.com/kaspanet/rusty-kaspa
