@@ -1,0 +1,59 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: rusty-kaspad_web_1
+      APP_PORT: 4321
+
+  kaspad:
+    image: kaspanet/rusty-kaspad:v1.0.1@sha256:5bc3195c2cd2d171885781ed55ead9485d93c7bd7b784d46e9e393c96757fe22
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR:-./data}/data:/data
+    ports:
+      - 16110:16110  # GRPC
+      - 16111:16111  # P2P
+      - 17110:17110  # WRPC (Borsh)
+      - 18110:18110  # WRPC (JSON)
+    command: >
+      kaspad
+      --rpclisten=0.0.0.0:16110
+      --rpclisten-borsh=0.0.0.0:17110
+      --rpclisten-json=0.0.0.0:18110
+      --loglevel=info
+    networks:
+      - kaspa-net
+
+  api:
+    image: elldee/kaspa-api:v0.1.0@sha256:c1aa4095060e9b691d85c66a1cf361d4f8dfb50d7f101d1f940cd00093239afd
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      KASPAD_HOST: kaspad
+      KASPAD_RPC_PORT: 18110
+      KASPAD_CONTAINER_NAME: kaspad
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # For log parsing
+    depends_on:
+      - kaspad
+    networks:
+      - kaspa-net
+
+  # Frontend Dashboard
+  frontend:
+    image: elldee/kaspa-frontend:v0.1.0@sha256:24254d218def641ff38288926be955b76002ccac1dd7690266cde1c890bc4117
+    container_name: kaspa-frontend
+    restart: on-failure
+    stop_grace_period: 1m
+    ports:
+      - 8080:8080
+    depends_on:
+      - api
+    networks:
+      - kaspa-net
+
+networks:
+  kaspa-net:
+    driver: bridge

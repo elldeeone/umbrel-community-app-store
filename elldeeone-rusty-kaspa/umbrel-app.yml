@@ -1,0 +1,38 @@
+manifestVersion: 1
+id: elldeeone-rusty-kaspa
+category: bitcoin
+name: Rusty Kaspa Node Dashboard
+version: "v1.0.1"
+tagline: A live dashboard for monitoring your Kaspa full node
+description: |
+  Welcome to the Rust-based implementation of the Kaspa full-node with a live monitoring dashboard. This package provides a three-tier architecture with real-time monitoring capabilities.
+
+  **Features:**
+  - Live sync status monitoring
+  - Real-time block count and network metrics
+  - Connected peers information
+  - Node version and uptime display
+  - Auto-refreshing dashboard (updates every 5 seconds)
+
+  **Architecture:**
+  - Kaspa Node: The actual Rusty Kaspa node connecting to the network
+  - REST API Server: Secure middleman for frontend-to-node communication
+  - Frontend Dashboard: Beautiful web interface with live data
+
+  Kaspa is a proof-of-work cryptocurrency with instant transaction confirmation through blockDAG technology.
+
+  The very heart of Kaspa is the public nodes. Please consider making your node public by forwarding TCP port 16111 on your firewall to your Umbrel node IP address to support the network.
+
+  This package uses the Docker container maintained by [supertypo](https://hub.docker.com/r/kaspanet/rusty-kaspad), based on [Rusty Kaspa](https://github.com/kaspanet/rusty-kaspa).
+
+  Packaged for Umbrel by Luke Dunshea (http://luke.dunshea.au).
+developer: Kaspa Community
+website: https://github.com/kaspanet/rusty-kaspa
+repo: https://github.com/kaspanet/rusty-kaspa
+support: https://github.com/elldeeone/umbrel-community-app-store/pulls
+port: 8080
+dependencies: []
+path: ""
+gallery: []
+submitter: Luke Dunshea
+submission: https://github.com/getumbrel/umbrel-apps/pull/2060
