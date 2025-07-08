@@ -25,7 +25,7 @@ services:
       - kaspa-net
 
   kaspa-api:
-    image: elldee/kaspa-api:v0.1.0@sha256:e6b313311aa6cac0796ff59e61bfc70c6c6ca4b8714ed1ce175ae7cdbc094431
+    image: elldee/kaspa-api:v0.1.0@sha256:c1aa4095060e9b691d85c66a1cf361d4f8dfb50d7f101d1f940cd00093239afd
     restart: on-failure
     stop_grace_period: 1m
     environment:
@@ -41,7 +41,7 @@ services:
 
   # Frontend Dashboard
   frontend:
-    image: elldee/kaspa-frontend:v0.1.0@sha256:24254d218def641ff38288926be955b76002ccac1dd7690266cde1c890bc4117
+    image: elldee/kaspa-frontend:v0.1.0@sha256:e6b313311aa6cac0796ff59e61bfc70c6c6ca4b8714ed1ce175ae7cdbc094431
     restart: on-failure
     stop_grace_period: 1m
     depends_on:
