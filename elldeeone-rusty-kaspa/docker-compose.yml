@@ -2,7 +2,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: frontend
-      APP_PORT: 80
+      APP_PORT: 4321
 
   kaspad:
     image: kaspanet/rusty-kaspad:v1.0.1@sha256:5bc3195c2cd2d171885781ed55ead9485d93c7bd7b784d46e9e393c96757fe22
