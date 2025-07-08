@@ -33,7 +33,7 @@ developer: Kaspa Community
 website: https://github.com/kaspanet/rusty-kaspa
 repo: https://github.com/kaspanet/rusty-kaspa
 support: https://github.com/elldeeone/umbrel-community-app-store/pulls
-port: 8080
+port: 80
 dependencies: []
 path: ""
 gallery: []
