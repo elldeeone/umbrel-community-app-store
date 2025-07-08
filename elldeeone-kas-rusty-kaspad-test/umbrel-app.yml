@@ -3,7 +3,7 @@ id: elldeeone-kas-rusty-kaspad-test
 icon: https://raw.githubusercontent.com/elldeeone/umbrel-community-app-store/refs/heads/master/icon/kaspa_icon.svg
 category: bitcoin
 name: Rusty Kaspad-test
-version: "v1.0.0"
+version: "v1.0.1"
 tagline: A Rust implementation of a Kaspa full node-test
 description: |
   Rusty Kaspad is a Rust implementation of a Kaspa full node. This node software 
