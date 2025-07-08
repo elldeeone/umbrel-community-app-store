@@ -1,7 +1,7 @@
 manifestVersion: 1
 id: elldeeone-rusty-kaspa
 category: bitcoin
-name: Rusty Kaspa Node Dashboard
+name: rusty-kaspa
 version: "v1.0.1"
 tagline: A live dashboard for monitoring your Kaspa full node
 description: |

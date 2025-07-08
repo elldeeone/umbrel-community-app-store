@@ -1,17 +1,16 @@
 services:
+
   app_proxy:
     environment:
-      APP_HOST: frontend
+      APP_HOST: elldeeone-rusty-kaspa_frontend_1
       APP_PORT: 4321
-    networks:
-      - kaspa-net
 
   kaspad:
     image: kaspanet/rusty-kaspad:v1.0.1@sha256:5bc3195c2cd2d171885781ed55ead9485d93c7bd7b784d46e9e393c96757fe22
     restart: on-failure
     stop_grace_period: 1m
     volumes:
-      - ${APP_DATA_DIR:-./data}/data:/data
+      - ${APP_DATA_DIR}/data:/data
     ports:
       - 16110:16110  # GRPC
       - 16111:16111  # P2P
@@ -23,8 +22,6 @@ services:
       --rpclisten-borsh=0.0.0.0:17110
       --rpclisten-json=0.0.0.0:18110
       --loglevel=info
-    networks:
-      - kaspa-net
 
   kaspa-api:
     image: elldee/kaspa-api:v0.2.0@sha256:c7766675bc882d07a212e874e355ace33d4a7b2860c78964dd95524d04324460
@@ -38,19 +35,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock  # For log parsing
     depends_on:
       - kaspad
-    networks:
-      - kaspa-net
 
-  # Frontend Dashboard
   frontend:
     image: elldee/kaspa-frontend:v0.2.0@sha256:e0b6f11d450247c2e746d5e69c2a162067b0689550060261b0fa0a32de17f014
     restart: on-failure
     stop_grace_period: 1m
     depends_on:
       - kaspa-api
-    networks:
-      - kaspa-net
-
-networks:
-  kaspa-net:
-    driver: bridge
