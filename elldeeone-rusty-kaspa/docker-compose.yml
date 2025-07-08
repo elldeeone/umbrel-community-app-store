@@ -1,7 +1,7 @@
 services:
   app_proxy:
     environment:
-      APP_HOST: frontend
+      APP_HOST: elldeeone-rusty-kaspa_frontend_1
       APP_PORT: 4321
 
   kaspad:
