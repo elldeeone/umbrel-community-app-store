@@ -3,8 +3,8 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: rusty-kaspad_web_1
-      APP_PORT: 4321
+      APP_HOST: frontend
+      APP_PORT: 8080
 
   kaspad:
     image: kaspanet/rusty-kaspad:v1.0.1@sha256:5bc3195c2cd2d171885781ed55ead9485d93c7bd7b784d46e9e393c96757fe22
@@ -26,7 +26,7 @@ services:
     networks:
       - kaspa-net
 
-  api:
+  kaspa-api:
     image: elldee/kaspa-api:v0.1.0@sha256:c1aa4095060e9b691d85c66a1cf361d4f8dfb50d7f101d1f940cd00093239afd
     restart: on-failure
     stop_grace_period: 1m
@@ -44,13 +44,12 @@ services:
   # Frontend Dashboard
   frontend:
     image: elldee/kaspa-frontend:v0.1.0@sha256:24254d218def641ff38288926be955b76002ccac1dd7690266cde1c890bc4117
-    container_name: kaspa-frontend
     restart: on-failure
     stop_grace_period: 1m
     ports:
       - 8080:8080
     depends_on:
-      - api
+      - kaspa-api
     networks:
       - kaspa-net
 
