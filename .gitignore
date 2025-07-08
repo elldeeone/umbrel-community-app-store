@@ -2,3 +2,5 @@
 
 # Claude AI folder
 .claud/
+CLAUDE.md
+.claude/settings.local.json
