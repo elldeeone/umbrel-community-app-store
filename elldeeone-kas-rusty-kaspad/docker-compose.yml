@@ -32,6 +32,8 @@ services:
     stop_grace_period: 1m
     volumes:
       - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}/logs:/logs
+      - ${APP_DATA_DIR}/kaspad-entrypoint.sh:/entrypoint.sh:ro
     ports:
       - 16110:16110  # GRPC
       - 16111:16111  # P2P
