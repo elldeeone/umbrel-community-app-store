@@ -22,7 +22,7 @@ services:
       KASPAD_RPC_PORT: 18110
       KASPAD_CONTAINER_NAME: elldeeone-kas-rusty-kaspad-test_kaspad_1
     volumes:
-      - ${APP_DATA_DIR:-./data}/logs:/logs:ro  # For log parsing
+      - ${APP_DATA_DIR}/logs:/logs:ro  # For log parsing
     depends_on:
       - kaspad
 
@@ -32,28 +32,11 @@ services:
     stop_grace_period: 1m
     volumes:
       - ${APP_DATA_DIR}/data:/data
-      - ${APP_DATA_DIR:-./data}/logs:/logs
+      - ${APP_DATA_DIR}/logs:/logs
+      - ${APP_DATA_DIR}/kaspad-entrypoint.sh:/entrypoint.sh:ro
     ports:
       - 16110:16110  # GRPC
       - 16111:16111  # P2P
       - 17110:17110  # WRPC (Borsh)
       - 18110:18110  # WRPC (JSON)
-    command: >
-      kaspad
-      --rpclisten=0.0.0.0:16110
-      --rpclisten-borsh=0.0.0.0:17110
-      --rpclisten-json=0.0.0.0:18110
-      --loglevel=info
-      2>&1 | (
-        BUFFER_FILE=/logs/kaspad_buffer.log
-        BUFFER_SIZE=10000
-        > \$$BUFFER_FILE
-        while IFS= read -r line; do
-          echo \"\$$line\" >> \$$BUFFER_FILE
-          LINE_COUNT=\$$(wc -l < \$$BUFFER_FILE)
-          if [ \$$LINE_COUNT -gt \$$BUFFER_SIZE ]; then
-            tail -n \$$BUFFER_SIZE \$$BUFFER_FILE > \$$BUFFER_FILE.tmp
-            mv \$$BUFFER_FILE.tmp \$$BUFFER_FILE
-          fi
-        done
-      )"
+    entrypoint: /entrypoint.sh
