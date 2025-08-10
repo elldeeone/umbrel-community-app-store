@@ -7,14 +7,14 @@ services:
       APP_PORT: 4321
 
   frontend:
-    image: elldee/kaspa-frontend:v0.3.0@sha256:129cff71ec174ea69bb38313cfb2a20518fa2c1fd371e2a2aa5fa4d75b74470c
+    image: elldee/kaspa-frontend:v0.3.1@sha256:bf9dc2189df37561a9d81e1368c935d1d94c7e3cd57da8d759cb83be6ea3b44a
     restart: on-failure
     stop_grace_period: 1m
     depends_on:
       - kaspa-api
   
   kaspa-api:
-    image: elldee/kaspa-api:v0.3.0@sha256:272c62730984d0a89459337370d215ee75a315552e3031b1f4c4f11c673cb266
+    image: elldee/kaspa-api:v0.3.1@sha256:1ddc6fd181aab9bd2679769233766dcfaba2030e52f3972fc15acad06297bc8a
     restart: on-failure
     stop_grace_period: 1m
     environment:
